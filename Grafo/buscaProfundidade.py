@@ -1,9 +1,15 @@
-def dfs_recursiva(grafo, vertice, visitados):
-    visitados.add(vertice)
-    for vizinho in grafo[vertice]:
-        if vizinho not in visitados:
-            dfs_recursiva(grafo, vizinho, visitados)
-
-def dfs(grafo, vertice):
+def buscaProfundidade(grafo, v):
     visitados = set()
-    dfs_recursiva(grafo, vertice, visitados)
+
+    def dfs_recursiva(grafo, v):
+        visitados.add(v)
+        for adj in grafo[v]:
+            if adj not in visitados:
+                dfs_recursiva(grafo, adj)
+
+    dfs_recursiva(grafo, v)
+
+    if len(visitados) == len(grafo):
+      print('Este grafo é Conexo')
+    else:
+      print('Este grafo é Desconexo')
