@@ -1,8 +1,13 @@
-def buscaLargura(grafo, vertice_fonte):
-    visitados, fila = set(), [vertice_fonte]
-    while fila:
-        vertice = fila.pop(0)
-        if vertice not in visitados:
-            visitados.add(vertice)
-            fila.extend(grafo[vertice] - visitados)
+def buscaLargura(grafo):
+    visitados, fila = set(), list(grafo.keys())
+    
+    while len(fila) > 0:
+        v = fila.pop(0)
+
+        if v not in visitados:
+            visitados.add(v)
+            fila.extend(list(grafo[v]).remove(list(visitados)))
+    
+    print(len(visitados))
+    print(len(grafo))
     return visitados

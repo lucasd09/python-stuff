@@ -1,3 +1,4 @@
+from buscaCiclo import BuscaCiclo
 from menu import *
 from createAresta import CreateArestas
 from createGrafo import CreateGrafo
@@ -15,38 +16,36 @@ print("CONSTRUINDO O GRAFO\n")
 vertices = CreateVertices()
 arestas = CreateArestas(vertices)
 grafo = CreateGrafo(vertices, arestas)
-metodo = 'profundidade'
 
 while True:
   opc = Menu()
 
-  if opc == 1:
-    vertices = CreateVertices()
-    arestas = CreateArestas(vertices)
-    grafo = CreateGrafo(vertices, arestas)
-  
-  if opc == 2:
-    while True:
-      opt = MenuValidar()
+  match opc:
+    case 1:
+      vertices = CreateVertices()
+      arestas = CreateArestas(vertices)
+      grafo = CreateGrafo(vertices, arestas)
 
-      if opt == 1:
-        pass
+    case 2:
+      print('\n')
+      PrintGrafo(grafo)
+      print('\n')
 
-      if opt == 2:
-        pass
+    case 3:
+      metodo = MenuValidar()
 
-      if opt == 3:
-        break
+      if metodo == 'profundidade' or 'largura':
+        PrintGrafo(grafo)
+        ValidaGrafo(grafo, vertices[0], metodo)
+          
+    case 4:
+      BuscaCiclo()
 
-  if opc == 3:
-    pass
-
-  if opc == 4:
-    print('Fim do algoritmo')
-    break
+    case 5:
+      print('Fim do algoritmo')
+      break
 
 
-
-print("\nGrafo construído:")
-PrintGrafo(grafo)
-ValidaGrafo(grafo, vertices[0], metodo)
+#print("\nGrafo construído:")
+#PrintGrafo(grafo)
+#ValidaGrafo(grafo, vertices[0], metodo)
