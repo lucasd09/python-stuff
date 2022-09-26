@@ -27,15 +27,15 @@ while True:
   
   if opc == 2:
     while True:
-      opc = MenuValidar()
+      opt = MenuValidar()
 
-      if opc == 1:
+      if opt == 1:
         pass
 
-      if opc == 2:
+      if opt == 2:
         pass
 
-      if opc == 3:
+      if opt == 3:
         break
 
   if opc == 3:

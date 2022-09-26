@@ -4,6 +4,7 @@ def Menu():
   print('2. Validar Grafo')
   print('3. Verificar se há ciclo no Grafo')
   print('4. Sair')
+  return input('Escolha -> ')
 
 def MenuValidar():
   pass
