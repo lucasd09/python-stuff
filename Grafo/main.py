@@ -35,11 +35,13 @@ while True:
       metodo = MenuValidar()
 
       if metodo == 'profundidade' or 'largura':
+        print('\n')
         PrintGrafo(grafo)
         ValidaGrafo(grafo, vertices[0], metodo)
+        print('\n')
           
     case 4:
-      BuscaCiclo()
+      BuscaCiclo(grafo, vertices[0])
 
     case 5:
       print('Fim do algoritmo')

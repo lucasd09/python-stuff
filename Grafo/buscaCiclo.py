@@ -1,2 +1,2 @@
-def BuscaCiclo():
+def BuscaCiclo(grafo, vertice_fonte):
   pass
