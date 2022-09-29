@@ -41,7 +41,13 @@ while True:
         print('\n')
           
     case 4:
-      BuscaCiclo(grafo, vertices[0])
+      print('\n')
+      PrintGrafo(grafo)
+      if BuscaCiclo(grafo, vertices[0]):
+        print('Há ciclos nesse grafo')
+      else:
+        print('Não há ciclos nesse grafo')
+      print('\n')
 
     case 5:
       print('Fim do algoritmo')
