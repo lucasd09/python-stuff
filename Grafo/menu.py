@@ -14,11 +14,10 @@ def MenuValidar():
   print('3. Voltar')
   opc = int(input('Escolha -> '))
 
-  match opc:
-    case 1:
-      return 'profundidade'
-    case 2:
-      return 'largura'
-    case 3:
-      return 
+  if opc == 1:
+    return 'profundidade'
+  if opc == 2:
+    return 'largura'
+  if opc == 3:
+    return 
 

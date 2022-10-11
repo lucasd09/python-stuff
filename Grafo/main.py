@@ -20,38 +20,37 @@ grafo = CreateGrafo(vertices, arestas)
 while True:
   opc = Menu()
 
-  match opc:
-    case 1:
-      vertices = CreateVertices()
-      arestas = CreateArestas(vertices)
-      grafo = CreateGrafo(vertices, arestas)
+  if opc ==  1:
+    vertices = CreateVertices()
+    arestas = CreateArestas(vertices)
+    grafo = CreateGrafo(vertices, arestas)
 
-    case 2:
+  if opc ==  2:
+    print('\n')
+    PrintGrafo(grafo)
+    print('\n')
+
+  if opc ==  3:
+    metodo = MenuValidar()
+
+    if metodo == 'profundidade' or 'largura':
       print('\n')
       PrintGrafo(grafo)
+      ValidaGrafo(grafo, vertices[0], metodo)
       print('\n')
+        
+  if opc ==  4:
+    print('\n')
+    PrintGrafo(grafo)
+    if BuscaCiclo(grafo, vertices[0]):
+      print('Há ciclos nesse grafo')
+    else:
+      print('Não há ciclos nesse grafo')
+    print('\n')
 
-    case 3:
-      metodo = MenuValidar()
-
-      if metodo == 'profundidade' or 'largura':
-        print('\n')
-        PrintGrafo(grafo)
-        ValidaGrafo(grafo, vertices[0], metodo)
-        print('\n')
-          
-    case 4:
-      print('\n')
-      PrintGrafo(grafo)
-      if BuscaCiclo(grafo, vertices[0]):
-        print('Há ciclos nesse grafo')
-      else:
-        print('Não há ciclos nesse grafo')
-      print('\n')
-
-    case 5:
-      print('Fim do algoritmo')
-      break
+  if opc ==  5:
+    print('Fim do algoritmo')
+    break
 
 
 #print("\nGrafo construído:")
