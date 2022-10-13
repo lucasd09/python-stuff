@@ -6,4 +6,4 @@ def ValidaGrafo(grafo, v, metodo):
     buscaProfundidade(grafo, v)
 
   if metodo == 'largura':
-    buscaLargura(grafo)
+    buscaLargura(grafo,v)

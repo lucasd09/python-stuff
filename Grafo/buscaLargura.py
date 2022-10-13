@@ -1,18 +1,26 @@
-def buscaLargura(grafo):
-    visitados, filaB = set(), list(grafo.values())
-    print('Fila : ',filaB)
-    fila = []
-    for i in filaB:
-        if i != []:
-            fila.append(i[0])
-    
-    while len(fila) > 0:
-        v = fila.pop(0)
-        if v not in visitados:
-            visitados.add(v)
-            fila.extend((grafo[v]).remove(v))
-            
-    
-    print(len(visitados))
-    print(len(grafo))
+def buscaLargura(grafo,v):
+    print('Keys : ',grafo.keys())
+    print('Values : ',grafo.values())
+    possibleV = [v]
+    print(possibleV[0])
+    for i in grafo:
+        if i == possibleV[0]:
+            visitados = [v,grafo[v][0]]
+        
+    while True:
+        for i in possibleV:
+            if grafo[i] not in possibleV:
+                for j in grafo[i]:
+                    if j not in possibleV:
+                        visitados.append(j)
+                        possibleV.append(j)
+                    continue
+        break
+    if len(possibleV) != len(grafo):
+        print('Grafo desconexo')
+    else:
+        print('Grafo conexo')
+
+
+
     return visitados
