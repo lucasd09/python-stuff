@@ -52,8 +52,4 @@ while True:
     case 5:
       print('Fim do algoritmo')
       break
-
-
-#print("\nGrafo construído:")
-#PrintGrafo(grafo)
-#ValidaGrafo(grafo, vertices[0], metodo)
+    
