@@ -1,4 +1,10 @@
 def BuscaCiclo(grafo, v):
+    if len(grafo) == 1 and grafo.values() != []:
+        if v in grafo.values():
+            print('Há ciclo')
+        else:
+            print('Não há ciclos')
+        return v
     possibleV = [v]
     for i in grafo:
         if i == possibleV[0]:
