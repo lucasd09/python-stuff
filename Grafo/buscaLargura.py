@@ -13,6 +13,8 @@ def buscaLargura(grafo,v):
                         possibleV.append(j)
                     continue
         break
+    #print(f'Visitados : {visitados}')
+    #print(f'PossibleV : {possibleV}')
     if len(possibleV) != len(grafo):
         print('Grafo desconexo')
     else:

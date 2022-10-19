@@ -42,10 +42,8 @@ while True:
   if opc ==  4:
     print('\n')
     PrintGrafo(grafo)
-    if BuscaCiclo(grafo, vertices[0]):
-      print('Há ciclos nesse grafo')
-    else:
-      print('Não há ciclos nesse grafo')
+    BuscaCiclo(grafo, vertices[0])
+    
     print('\n')
 
   if opc ==  5:
